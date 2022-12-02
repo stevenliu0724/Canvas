@@ -5,6 +5,11 @@ const particleArray = [];
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+window.addEventListener("rezie", function(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+
 class Particle {
     constructor(){
         this.x = Math.random() * canvas.width;
@@ -22,7 +27,7 @@ class Particle {
     draw(){
         c.beginPath();
         c.arc(this.x, this.y, this.size, 0, Math.PI *2, false);
-        c.fillStyle = "rgba(255, 0, 0, 0.5)";
+        c.fillStyle = "white";
         c.strokeStyle = "rgba(255, 0, 0, 0.6)";
         c.fill();
         c.stroke();

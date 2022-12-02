@@ -1,7 +1,6 @@
-CVS {
-    position:absolute;
-    border: 1px solid black;
-    background-color: black;
+#CVS {
+    position: absolute;
+    background: black;
     width: 100%;
     height: 100%;
     margin: 0;
