@@ -1,4 +1,4 @@
-var canvas = document.querySelector("canvas");
+var canvas = document.getElementById("CVS");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
@@ -37,22 +37,5 @@ function animation() {
 }
 
 animation();
-
-
-// create 10 random circle
-// for (i=0; i<10; i++) {
-
-//     var x = Math.random() * window.innerWidth;
-//     var y = Math.random() * window.innerHeight;
-//     var r = Math.random() * 50;
-
-//     c.beginPath();
-//     c.arc(x, y, r, 0, Math.PI *2, false);
-//     c.fillStyle = "rgba(255, 0, 0, 0.5)";
-//     c.strokeStyle = "rgba(255, 0, 0, 0.6)";
-//     c.fill();
-//     c.stroke();
-
-// }
 
 
