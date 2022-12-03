@@ -1,6 +1,7 @@
 const canvas = document.getElementById("CVS");
 const c = canvas.getContext("2d");
 const particleArray = [];
+let hcolor = 0;
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -38,9 +39,10 @@ class Particle {
         this.y = mouse.y;
         // this.x = Math.random() * canvas.width;
         // this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 5 + 1;
+        this.size = Math.random() * 8 + 1;
         this.speedx = Math.random() * 3 - 1.5;
         this.speedy = Math.random() * 3 - 1.5;
+        this.color = "hsl(" + hcolor + ", 100%, 50%)";
     };
     
     update(){
@@ -51,11 +53,9 @@ class Particle {
 
     draw(){
         c.beginPath();
+        c.fillStyle =this.color;
         c.arc(this.x, this.y, this.size, 0, Math.PI *2, false);
-        c.fillStyle = "white";
-        c.strokeStyle = "rgba(255, 0, 0, 0.9)";
         c.fill();
-        c.stroke();
     };
 
 };
@@ -79,10 +79,11 @@ function handleparticle(){
 };
 
 function animate(){
-    //c.clearRect(0, 0, canvas.width, canvas.height);
-    c.fillStyle = "rgba(0, 0, 0, 0.05)";
-    c.fillRect(0, 0, canvas.width, canvas.height);
+    c.clearRect(0, 0, canvas.width, canvas.height);
+    //c.fillStyle = "black";
+    //c.fillRect(0, 0, canvas.width, canvas.height);
     handleparticle();
+    hcolor+=5;
     requestAnimationFrame(animate);
 };
 
